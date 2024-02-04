@@ -11,7 +11,7 @@ export default async function Category() {
       </div>
       <div className="fixed overflow-hidden w-[350px] mt-14">
         <div className="mx-3 pt-4">
-          <lebel className="relative block w-full">
+          <div className="relative block w-full">
             <span className="absolute inset-y-0 left-0 flex items-center pl-4">
               <Image
                 src="/icons/search-svgrepo-com.svg"
@@ -27,7 +27,7 @@ export default async function Category() {
               type="text"
               name="search"
             />
-          </lebel>
+          </div>
         </div>
         <div className="h-[calc(100vh-32vh)] lg:h-[calc(100vh_-_45.5vh)] 3xl:h-[68vh] scroll-smooth scroll-my-2 overflow-y-scroll scrollbar-width-thin pb-8 mb-4 overflow-hidden">
           <div className="mt-4">
@@ -95,9 +95,9 @@ export default async function Category() {
   );
 }
 
-// export async function generateStaticParams() {
-//   const duaCats = await getAllCatalist();
-//   return duaCats.map((cats) => ({
-//     id: cats.id.toString(),
-//   }));
-// }
+export async function generateStaticParams() {
+  const duaCats = await getAllCatalist();
+  return duaCats.map((cats) => ({
+    id: cats.id.toString(),
+  }));
+}

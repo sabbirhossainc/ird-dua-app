@@ -74,9 +74,9 @@ export default async function Duas() {
   );
 }
 
-// export async function generateStaticParams() {
-//   const duas = await getAllDuas();
-//   return duas.map((dua) => ({
-//     id: dua.id.toString(),
-//   }));
-// }
+export async function generateStaticParams() {
+  const duas = await getAllDuas();
+  return duas.map((dua) => ({
+    id: dua.id.toString(),
+  }));
+}

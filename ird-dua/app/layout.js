@@ -1,5 +1,4 @@
 import { Inter } from "next/font/google";
-import Link from "next/link";
 import Topbar from "@/app/components/Topbar";
 import RightBar from "@/app/components/RightBar";
 import LeftBar from "@/app/components/LeftBar";
