@@ -95,9 +95,9 @@ export default async function Category() {
   );
 }
 
-export async function generateStaticParams() {
-  const duaCats = await getAllCatalist();
-  return duaCats.map((cats) => ({
-    id: cats.id.toString(),
-  }));
-}
+// export async function generateStaticParams() {
+//   const duaCats = await getAllCatalist();
+//   return duaCats.map((cats) => ({
+//     id: cats.id.toString(),
+//   }));
+// }
