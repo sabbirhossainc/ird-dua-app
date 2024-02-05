@@ -8,6 +8,12 @@ var db = require("./db.js");
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.status(200),express.json({
+    message:"Hello Next",
+  });
+});
+
 app.get("/duas", (req, res) => {
   try {
     var sql = "select * from dua";
