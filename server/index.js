@@ -50,4 +50,4 @@ app.get("/duas/duacategory", (req, res, next) => {
 
 app.listen(PORT, () => console.log(`App listening on port ${PORT}!`));
 
-export default app;
+module.exports = app;
