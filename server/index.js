@@ -1,7 +1,7 @@
-import express, { Request, Response } from 'express';
-const cors = require('cors');
+const express = require("express");
+const cors = require("cors");
 const sqlite3 = require('sqlite3').verbose();
-// const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 const DBSOURCE = './dua_main.sqlite';
 
 const app = express();
@@ -9,18 +9,26 @@ app.use(express.json());
 app.use(cors());
 
 // open the database
-let db = new sqlite3.Database(DBSOURCE, sqlite3.OPEN_READWRITE, (err: any) => {
+let db = new sqlite3.Database(DBSOURCE, sqlite3.OPEN_READWRITE, (err) => {
   if (err) {
     console.error(err.message);
   }
   console.log('Connected to the chinook database.');
 });
-// get post routes
 
-// app.get('/duas', (req: Request, res: Response) => {
+// root routes
+app.get("/", (req, res) => {
+  res.status(200),express.json({
+    message:"Hello Next - vercel back",
+  });
+});
+
+// get another routes
+
+// app.get('/duas', (req, res) => {
 //   let sql = 'select * from dua';
 //   let params = [];
-//   db.all(sql, params, (err: any, rows: any) => {
+//   db.all(sql, params, (err, rows) => {
 //     if (err) {
 //       res.status(400).json({ error: err.message });
 //       return;
@@ -34,10 +42,10 @@ let db = new sqlite3.Database(DBSOURCE, sqlite3.OPEN_READWRITE, (err: any) => {
 //   db.close();
 // });
 
-// app.get('/duas/duacategory', (req: Request, res: Response) => {
+// app.get('/duas/duacategory', (req, res) => {
 //   let sql = 'select * from category';
 //   let params = [];
-//   db.all(sql, params, (err: any, row: any) => {
+//   db.all(sql, params, (err, row) => {
 //     if (err) {
 //       res.status(400).json({ error: err.message });
 //       return;
@@ -51,11 +59,7 @@ let db = new sqlite3.Database(DBSOURCE, sqlite3.OPEN_READWRITE, (err: any) => {
 //   db.close();
 // });
 
-// root routes
-app.get('/', (req: Request, res: Response) => {
-  res.status(200).json({ message: 'Hello Next - vercel back' });
-});
 
-// app.listen(PORT, () => console.log(`App listening on port ${PORT}!`));
+app.listen(PORT, () => console.log(`App listening on port ${PORT}!`));
 
-export default app;
+module.exports = app;
