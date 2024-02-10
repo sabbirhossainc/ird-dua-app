@@ -62,6 +62,14 @@ export default function MenuCom() {
     setOpen(e);
     // let dropdown = document.getElementById('dropdown');
     // dropdown.classList.toggle('block');
+//     const dropdownContainer = document.querySelector(".dropdown-container");
+// const menuTitle = document.querySelector(".menu-title");
+// const dropdownMenu = document.querySelector(".dropdown-menu");
+//     window.addEventListener("click", (e) => {
+//   if (!dropdownContainer.contains(e.target)) {
+//     dropdownMenu.classList.remove("visible")
+  }
+})
   }
   return (
     <div className="">
